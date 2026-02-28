@@ -1,0 +1,17 @@
+{
+  "name": "auto-atendimento-frota",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp - Auto Atendimento Gestão de Frotas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "venom-bot": "^5.0.4",
+    "better-sqlite3": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
