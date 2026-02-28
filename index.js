@@ -1,4 +1,3 @@
-// index.js - Inicialização do Bot
 const venom = require('venom-bot');
 const { handleMessage } = require('./src/bot/handler');
 const { initDB } = require('./src/database/db');
@@ -10,6 +9,18 @@ venom.create({
   multidevice: true,
   headless: true,
   logQR: true,
+  browserArgs: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu',
+  ],
+  autoClose: 0,
+  createPathFileToken: true,
 }).then((client) => {
   console.log('✅ Bot iniciado com sucesso!');
   client.onMessage((message) => handleMessage(client, message));
